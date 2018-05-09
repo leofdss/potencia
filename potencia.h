@@ -4,18 +4,23 @@
 typedef struct p Potencia;
 
 struct p{
-    float polar[2];
-    float retangular[2];
-    float fp;
-    float tensao;
-    float frequencia;
-    float rendimento;
-    float capacitor;
-    float corrente;
+    double polar[2];
+    double retangular[2];
+    double potenciaMotor;
+    double fp;
+    int adiantado;
+    double tensao;
+    double frequencia;
+    double rendimento;
+    double capacitor;
+    double corrente;
 };
 
-void convertPolar(Potencia *potencia);
-void convertRetangular(Potencia *potencia);
-void printPotencia(Potencia *potencia);
-Potencia *scanfPotencia();
-void correcao(Potencia *potencia);
+Potencia potencia(Potencia potencia);
+
+Potencia convertPolar(Potencia potencia);
+Potencia convertRetangular(Potencia potencia);
+void printPotencia(Potencia potencia);
+Potencia scanfPotencia();
+
+Potencia capacitor(Potencia potencia);
