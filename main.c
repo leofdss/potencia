@@ -9,5 +9,6 @@ int main()
     motor = dados();
     motor = processamentoDados(motor);
     print(motor);
+    gravar(motor);
     return 0;
 };

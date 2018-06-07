@@ -36,3 +36,4 @@ struct m
 Motor dados();
 Motor processamentoDados(Motor motor);
 void print(Motor motor);
+void gravar(Motor motor);
