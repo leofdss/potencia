@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <stdio.h>
+
 #define true 1
 #define false 0
 #define pi 3.14159265359
@@ -66,4 +69,19 @@ void print(Motor motor)
     printf("Potencia reativa %.2f VAR (L)\n", motor.potenciaComplexa.reativa);
     printf("Corrente: %.2f L %.2f A\n",motor.corrente[0], motor.corrente[1]);
     printf("Capacitor: %.2f uF\n", motor.capacitor);
+}
+
+void gravar(Motor motor){
+    FILE *pont_arq;
+    pont_arq = fopen("arquivo.txt", "a");
+
+    fprintf(pont_arq, "------------------------------\n\n");
+    fprintf(pont_arq, "Potencia consumida: %.2f W\n", motor.potenciaComplexa.ativa);
+    fprintf(pont_arq, "Angulo: %.2f̣°\n", motor.potenciaComplexa.angulo);
+    fprintf(pont_arq, "Potencia aparente: %.2f VA\n", motor.potenciaComplexa.aparente);
+    fprintf(pont_arq, "Potencia reativa %.2f VAR (L)\n", motor.potenciaComplexa.reativa);
+    fprintf(pont_arq, "Corrente: %.2f L %.2f A\n",motor.corrente[0], motor.corrente[1]);
+    fprintf(pont_arq, "Capacitor: %.2f uF\n", motor.capacitor);
+    
+    fclose(pont_arq);
 }
